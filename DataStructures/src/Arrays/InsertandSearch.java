@@ -6,8 +6,14 @@ public class InsertandSearch {
 		int[] array = new int[10];
 		array[0] = 1;
 		array[1] = 3;
+		array[3] = 2;
 		InsertandSearch obj = new InsertandSearch();
-		int abc = obj.search(array, array.length, 2);
+		int elementFound= obj.search(array, array.length, 2);
+		if(elementFound!=-1) {
+			System.out.print("Element found at"+elementFound);
+		}else {
+			System.out.print("Element Not found");
+		}
   
   		// TO DO Auto-generated method stub
                 
@@ -21,4 +27,11 @@ public class InsertandSearch {
   	 	} 
   	 	return -1;
   	}
+	
+	public void insert(int array[],int position,int element) {
+		for(int i=array.length-1;i>=position;i--) {
+			array[i+1]=array[i];
+		}
+		array[position]=element;
+	}
 }
